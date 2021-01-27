@@ -1,14 +1,12 @@
-import styled from 'styled-components'
-import db from '../db.json'
-import Widget from '../src/components/Widget'
-import QuizLogo from '../src/components/QuizLogo'
-import QuizBackground from '../src/components/QuizBackground'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
-import Head from 'next/head'
-import IndexPage from '../src/components/head'
-
-
+import React from 'react';
+import styled from 'styled-components';
+import db from '../db.json';
+import Widget from '../src/components/Widget';
+import QuizLogo from '../src/components/QuizLogo';
+import QuizBackground from '../src/components/QuizBackground';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
+import IndexPage from '../src/components/head';
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -21,15 +19,12 @@ export const QuizContainer = styled.div`
   }
 `;
 
-
-
-
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <IndexPage/>
+      <IndexPage />
       <QuizContainer>
-        <QuizLogo/>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>{db.title}</h1>
