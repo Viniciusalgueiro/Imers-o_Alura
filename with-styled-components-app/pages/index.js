@@ -22,7 +22,7 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   const router = useRouter();
-  let name = '';
+  const [name, setName] = React.useState('');
   return (
     <QuizBackground backgroundImage={db.bg}>
       <IndexPage />
@@ -42,7 +42,7 @@ export default function Home() {
               <input
                 onChange={function (infosDoEvento) {
                   console.log(infosDoEvento.target.value);
-                  name = infosDoEvento.target.value;
+                  setName(infosDoEvento.target.value);
                 }}
                 placeholder="insira seu nome"
               />
@@ -53,7 +53,6 @@ export default function Home() {
             </form>
           </Widget.Content>
         </Widget>
-
         <Widget>
           <Widget.Content>
             <h1>Outros Quizes</h1>
