@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import styled, { keyframes } from 'styled-components';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizLogo from '../src/components/QuizLogo';
@@ -7,6 +8,19 @@ import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/Quizcontainer';
 import AlternativesForm from '../src/components/AlternativeForm';
 import Button from '../src/components/Button';
+
+const Spin = keyframes`
+to{ transform: rotate(360deg);}
+`;
+
+const Spinner = styled.div`
+border: 8px solid rgba(0,0,0,.1);
+border-left-color:#22a6b3;
+height:60px;
+width:60px;
+border-radius:50%;
+animation:${Spin} 1s linear infinite;
+`;
 
 function ResultWidget({ results }) {
   return (
@@ -56,7 +70,7 @@ function LoadingWidget() {
       </Widget.Header>
 
       <Widget.Content>
-        [Desafio do Loading]
+        <Spinner />
       </Widget.Content>
     </Widget>
   );
